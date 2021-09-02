@@ -30,3 +30,21 @@ r = update(4793, 3, 0)
 bin(4793)[2:]
 bin(r)[2:]
 
+def tobinary(i):
+    s = []
+    while i >0:
+        s.insert(0, str(i%2))
+        i = i // 2
+    return ''.join(s)
+
+def toint(s):
+    n = len(s)
+    r  = 0
+    s = s[::-1]
+    for i in range(n):
+        if s[i]=='1':
+            r += 2**i
+    return r
+
+tobinary(46)
+toint(bin(46)[2:])
